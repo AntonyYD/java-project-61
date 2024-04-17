@@ -1,6 +1,6 @@
 package hexlet.code.exception;
 
-public class TaskAnswerException extends RuntimeException{
+public class TaskAnswerException extends RuntimeException {
 
     public TaskAnswerException(String message) {
         super(message);

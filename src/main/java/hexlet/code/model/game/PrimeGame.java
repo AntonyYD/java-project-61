@@ -5,7 +5,7 @@ import hexlet.code.exception.TaskQuestionException;
 import hexlet.code.model.task.PrimeTask;
 import hexlet.code.sevice.AnswerValidator;
 
-public class PrimeGame implements Game<PrimeTask>{
+public class PrimeGame implements Game<PrimeTask> {
 
     @Override
     public PrimeTask instanceTask() {
@@ -18,8 +18,9 @@ public class PrimeGame implements Game<PrimeTask>{
         validateAnswer(task);
         var divCount = 0;
         for (int i = 1; i <= task.getCheckValue(); i++) {
-            if (task.getCheckValue() % i == 0)
+            if (task.getCheckValue() % i == 0) {
                 divCount++;
+            }
         }
         String rightAnswer = (divCount == 2) ? "yes" : "no";
         return task.getAnswer().equalsIgnoreCase(rightAnswer);
@@ -37,9 +38,10 @@ public class PrimeGame implements Game<PrimeTask>{
 
     @Override
     public void validateQuestion(PrimeTask task) {
-        if (task==null || task.getQuestion()==null || task.getQuestion().isBlank()
-                || task.getCheckValue()==null || task.getCheckValue()<=0)
+        if (task == null || task.getQuestion() == null || task.getQuestion().isBlank()
+                || task.getCheckValue() == null || task.getCheckValue() <= 0) {
             throw new TaskQuestionException();
+        }
     }
 
     @Override

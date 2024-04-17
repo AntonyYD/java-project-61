@@ -2,10 +2,10 @@ package hexlet.code.model.task;
 
 import java.util.Random;
 
-public class EvenTask extends Task{
+public class EvenTask extends Task {
 
     public EvenTask() {
-        this.checkValue = valueGenerator.nextInt(1,100);
+        this.checkValue = valueGenerator.nextInt(1, 100);
     }
 
     private Integer checkValue;

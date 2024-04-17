@@ -1,23 +1,25 @@
 package hexlet.code.model.task;
 
 /**
- * Класс описывает задание
+ * Класс описывает задание.
  */
 public abstract class Task {
 
     /**
-     * Ответ
+     * Ответ.
      */
     private String answer;
 
     /**
-     * Метод возвращает текст вопроса
+     * Метод возвращает текст вопроса.
+     *
      * @return - текст вопроса
      */
     public abstract String getQuestion();
 
     /**
-     * Метод возвращает текст ответа
+     * Метод возвращает текст ответа.
+     *
      * @return - текст ответа
      */
     public String getAnswer() {
@@ -25,7 +27,8 @@ public abstract class Task {
     }
 
     /**
-     * Метод устанавливает текст ответа
+     * Метод устанавливает текст ответа.
+     * @param answer
      */
     public void setAnswer(String answer) {
         this.answer = answer;

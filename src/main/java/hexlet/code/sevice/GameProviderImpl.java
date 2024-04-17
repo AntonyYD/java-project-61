@@ -1,6 +1,11 @@
 package hexlet.code.sevice;
 
-import hexlet.code.model.game.*;
+import hexlet.code.model.game.EvenGame;
+import hexlet.code.model.game.Game;
+import hexlet.code.model.game.ProgressionGame;
+import hexlet.code.model.game.SumGame;
+import hexlet.code.model.game.PrimeGame;
+import hexlet.code.model.game.MaxSameDivGame;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,9 +24,9 @@ public class GameProviderImpl implements GameProvider {
 
     @Override
     public Game getById(int id) {
-         return registryList.stream()
-                 .filter(game -> game.getId() == id)
-                 .findFirst().orElse(null);
+        return registryList.stream()
+                .filter(game -> game.getId() == id)
+                .findFirst().orElse(null);
     }
 
     @Override

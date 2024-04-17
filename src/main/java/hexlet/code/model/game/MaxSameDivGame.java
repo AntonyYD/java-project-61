@@ -5,7 +5,7 @@ import hexlet.code.exception.TaskQuestionException;
 import hexlet.code.model.task.MaxSameDivTask;
 import hexlet.code.sevice.AnswerValidator;
 
-public class MaxSameDivGame implements Game<MaxSameDivTask>{
+public class MaxSameDivGame implements Game<MaxSameDivTask> {
 
     @Override
     public MaxSameDivTask instanceTask() {
@@ -18,9 +18,9 @@ public class MaxSameDivGame implements Game<MaxSameDivTask>{
         validateAnswer(task);
         var answer = Integer.valueOf(task.getAnswer());
         var rightAnswer = 1;
-        var i = (task.getFirstValue()>=task.getSecondValue()) ? task.getSecondValue() : task.getFirstValue();
+        var i = (task.getFirstValue() >= task.getSecondValue()) ? task.getSecondValue() : task.getFirstValue();
         while (i > 1) {
-            if (task.getFirstValue()%i==0 && task.getSecondValue()%i==0) {
+            if (task.getFirstValue() % i == 0 && task.getSecondValue() % i == 0) {
                 rightAnswer = i;
                 break;
             }
@@ -41,10 +41,11 @@ public class MaxSameDivGame implements Game<MaxSameDivTask>{
 
     @Override
     public void validateQuestion(MaxSameDivTask task) throws TaskQuestionException {
-        if (task==null || task.getQuestion()==null || task.getQuestion().isBlank()
-                || task.getFirstValue()==null || task.getSecondValue()==null
-                || task.getFirstValue()<=0 || task.getSecondValue()<=0)
+        if (task == null || task.getQuestion() == null || task.getQuestion().isBlank()
+                || task.getFirstValue() == null || task.getSecondValue() == null
+                || task.getFirstValue() <= 0 || task.getSecondValue() <= 0) {
             throw new TaskQuestionException();
+        }
     }
 
     @Override

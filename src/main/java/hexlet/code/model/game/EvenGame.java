@@ -5,7 +5,7 @@ import hexlet.code.exception.TaskQuestionException;
 import hexlet.code.model.task.EvenTask;
 import hexlet.code.sevice.AnswerValidator;
 
-public class EvenGame implements Game<EvenTask>{
+public class EvenGame implements Game<EvenTask> {
 
     @Override
     public EvenTask instanceTask() {
@@ -16,7 +16,7 @@ public class EvenGame implements Game<EvenTask>{
     public boolean checkResult(EvenTask task) {
         validateQuestion(task);
         validateAnswer(task);
-        String rightAnswer = (task.getCheckValue()%2==0) ? "yes" : "no";
+        String rightAnswer = (task.getCheckValue() % 2 == 0) ? "yes" : "no";
         return task.getAnswer().equalsIgnoreCase(rightAnswer);
     }
 
@@ -32,9 +32,10 @@ public class EvenGame implements Game<EvenTask>{
 
     @Override
     public void validateQuestion(EvenTask task) {
-        if (task==null || task.getQuestion()==null || task.getQuestion().isBlank()
-                || task.getCheckValue()==null || task.getCheckValue()<=0)
+        if (task == null || task.getQuestion() == null || task.getQuestion().isBlank()
+                || task.getCheckValue() == null || task.getCheckValue() <= 0) {
             throw new TaskQuestionException();
+        }
     }
 
     @Override
