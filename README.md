@@ -5,20 +5,20 @@
 
 # Проверка на чётность
 
-![](/Users/antondulev/Desktop/Снимок экрана 2024-04-22 в 21.38.52.png)
+<img src="./src/main/resources/even.png" width="600"/>
 
 # Калькулятор
 
-![](/Users/antondulev/Desktop/Снимок экрана 2024-04-22 в 22.04.18.png)
+<img src="./src/main/resources/calc.png" width="600"/>
 
 # НОД
 
-![](/Users/antondulev/Desktop/Снимок экрана 2024-04-22 в 22.21.40.png)
+<img src="./src/main/resources/GCD.png" width="600"/>
 
 # Арифметическая прогрессия
 
-![](/Users/antondulev/Desktop/Снимок экрана 2024-04-22 в 22.30.10.png)
+<img src="./src/main/resources/progression.png" width="600"/>
 
 # Простое ли число?
 
-![](/Users/antondulev/Desktop/Снимок экрана 2024-04-22 в 22.33.46.png)
+<img src="./src/main/resources/prime.png" width="600"/>
