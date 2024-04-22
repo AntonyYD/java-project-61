@@ -2,45 +2,49 @@ package hexlet.code.model.game;
 
 import hexlet.code.exception.TaskAnswerException;
 import hexlet.code.exception.TaskQuestionException;
-import hexlet.code.model.task.MaxSameDivTask;
+import hexlet.code.model.task.GCDTask;
 import hexlet.code.sevice.AnswerValidator;
 
-public class MaxSameDivGame implements Game<MaxSameDivTask> {
+public class GCDGame extends AbstractGame<GCDTask> {
 
     @Override
-    public MaxSameDivTask instanceTask() {
-        return new MaxSameDivTask();
+    public GCDTask instanceTask() {
+        var firstValue = generator.nextInt(1, 50);
+        var secondValue = generator.nextInt(1, 50);
+        return new GCDTask(firstValue, secondValue);
     }
 
     @Override
-    public boolean checkResult(MaxSameDivTask task) {
-        validateQuestion(task);
-        validateAnswer(task);
-        var answer = Integer.valueOf(task.getAnswer());
-        var rightAnswer = 1;
+    public String getDescription() {
+        return "Find the greatest common divisor of given numbers.";
+    }
+
+    @Override
+    protected String calculateResult(GCDTask task) {
+        var result = 1;
         var i = (task.getFirstValue() >= task.getSecondValue()) ? task.getSecondValue() : task.getFirstValue();
         while (i > 1) {
             if (task.getFirstValue() % i == 0 && task.getSecondValue() % i == 0) {
-                rightAnswer = i;
+                result = i;
                 break;
             }
             i--;
         }
-        return answer == rightAnswer;
+        return String.valueOf(result);
     }
 
     @Override
     public String getName() {
-        return "MAX common divisor";
+        return "GCD";
     }
 
     @Override
     public int getId() {
-        return 5;
+        return 4;
     }
 
     @Override
-    public void validateQuestion(MaxSameDivTask task) throws TaskQuestionException {
+    public void validateQuestion(GCDTask task) throws TaskQuestionException {
         if (task == null || task.getQuestion() == null || task.getQuestion().isBlank()
                 || task.getFirstValue() == null || task.getSecondValue() == null
                 || task.getFirstValue() <= 0 || task.getSecondValue() <= 0) {
@@ -49,7 +53,7 @@ public class MaxSameDivGame implements Game<MaxSameDivTask> {
     }
 
     @Override
-    public void validateAnswer(MaxSameDivTask task) throws TaskAnswerException {
+    public void validateAnswer(GCDTask task) throws TaskAnswerException {
         AnswerValidator.intValue(task);
     }
 }

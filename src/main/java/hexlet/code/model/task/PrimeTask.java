@@ -1,15 +1,12 @@
 package hexlet.code.model.task;
 
-import java.util.Random;
-
 public class PrimeTask extends Task {
 
-    public PrimeTask() {
-        this.checkValue = valueGenerator.nextInt(1, 50);
+    public PrimeTask(Integer checkValue) {
+        this.checkValue = checkValue;
     }
 
-    private Integer checkValue;
-    private Random valueGenerator = new Random();
+    private final Integer checkValue;
 
     public Integer getCheckValue() {
         return checkValue;
@@ -17,6 +14,6 @@ public class PrimeTask extends Task {
 
     @Override
     public String getQuestion() {
-        return String.format("Answer 'yes' if number %d is prime. Otherwise answer 'no' ", checkValue);
+        return String.valueOf(checkValue);
     }
 }

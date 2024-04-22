@@ -25,4 +25,11 @@ public interface TaskValidator<T extends Task> {
      * @throws TaskAnswerException
      */
     void validateAnswer(T task) throws TaskAnswerException;
+
+//    /**
+//     * Метод проверяет корректность ответа.
+//     * @param task - задача
+//     * @return - true - если ответ валиден, иначе false
+//     */
+//    boolean isValidAnswer(T task);
 }

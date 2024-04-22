@@ -1,5 +1,8 @@
 package hexlet.code.exception;
 
+/**
+ * Исключение при неудачной валидации вопроса.
+ */
 public class TaskQuestionException extends RuntimeException {
 
     public TaskQuestionException() {

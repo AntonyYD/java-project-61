@@ -5,35 +5,38 @@ import hexlet.code.exception.TaskQuestionException;
 import hexlet.code.model.task.PrimeTask;
 import hexlet.code.sevice.AnswerValidator;
 
-public class PrimeGame implements Game<PrimeTask> {
+public class PrimeGame extends AbstractGame<PrimeTask> {
 
     @Override
     public PrimeTask instanceTask() {
-        return new PrimeTask();
+        var checkValue = generator.nextInt(1, 50);
+        return new PrimeTask(checkValue);
     }
 
     @Override
-    public boolean checkResult(PrimeTask task) {
-        validateQuestion(task);
-        validateAnswer(task);
+    public String getDescription() {
+        return "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
+    }
+
+    @Override
+    protected String calculateResult(PrimeTask task) {
         var divCount = 0;
         for (int i = 1; i <= task.getCheckValue(); i++) {
             if (task.getCheckValue() % i == 0) {
                 divCount++;
             }
         }
-        String rightAnswer = (divCount == 2) ? "yes" : "no";
-        return task.getAnswer().equalsIgnoreCase(rightAnswer);
+        return (divCount == 2) ? "yes" : "no";
     }
 
     @Override
     public String getName() {
-        return "Prime number";
+        return "Prime";
     }
 
     @Override
     public int getId() {
-        return 4;
+        return 6;
     }
 
     @Override

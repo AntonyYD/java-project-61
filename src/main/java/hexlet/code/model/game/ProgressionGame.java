@@ -5,52 +5,68 @@ import hexlet.code.exception.TaskQuestionException;
 import hexlet.code.model.task.ProgressionTask;
 import hexlet.code.sevice.AnswerValidator;
 
-public class ProgressionGame implements Game<ProgressionTask> {
+import java.util.ArrayList;
+import java.util.List;
+
+public class ProgressionGame extends AbstractGame<ProgressionTask> {
 
     @Override
     public ProgressionTask instanceTask() {
-        return new ProgressionTask();
+        List<Integer> progression = new ArrayList();
+        int length = 10;
+        int increment = generator.nextInt(1, 10);
+        int firsItem = generator.nextInt(1, 100);
+        progression.add(firsItem);
+        for (int i = 1; i < length; i++) {
+            progression.add(progression.get(i - 1) + increment);
+        }
+        int index = generator.nextInt(0, length);
+        progression.set(index, null);
+        return new ProgressionTask(progression);
+    }
+
+
+    @Override
+    public String getDescription() {
+        return "What number is missing in the progression?";
     }
 
     @Override
-    public boolean checkResult(ProgressionTask task) {
-        try {
-            validateQuestion(task);
-            validateAnswer(task);
-            int index = task.getProgression().indexOf(null);
-            int lastIndex = task.getProgression().size() - 1;
-            int firstValue = 0;
-            int secondValue = 0;
-            if (index == lastIndex || index == 0) {
-                if (index == lastIndex) {
-                    firstValue = task.getProgression().get(lastIndex - 2);
-                    secondValue = task.getProgression().get(lastIndex - 1);
-                } else {
-                    firstValue = task.getProgression().get(0);
-                    secondValue = task.getProgression().get(1);
-                }
+    protected String calculateResult(ProgressionTask task) {
+        Integer result;
+        int index = task.getProgression().indexOf(null);
+        int lastIndex = task.getProgression().size() - 1;
+        int firstValue;
+        int secondValue;
+        if (index == lastIndex || index == 0) {
+            if (index == lastIndex) {
+                firstValue = task.getProgression().get(index - 2);
+                secondValue = task.getProgression().get(index - 1);
+                var increment = secondValue - firstValue;
+                result = secondValue + increment;
             } else {
-                firstValue = task.getProgression().get(index - 1);
-                secondValue = task.getProgression().get(index + 1);
+                firstValue = task.getProgression().get(index + 1);
+                secondValue = task.getProgression().get(index + 2);
+                var increment = secondValue - firstValue;
+                result = firstValue - increment;
             }
-            int rightAnswer = (secondValue + firstValue) / 2;
-            return Integer.valueOf(task.getAnswer()) == rightAnswer;
-        } catch (Exception e) {
-            e.printStackTrace();
-            throw e;
+        } else {
+            firstValue = task.getProgression().get(index - 1);
+            secondValue = task.getProgression().get(index + 1);
+            result = (secondValue + firstValue) / 2;
         }
-
+        return String.valueOf(result);
     }
 
 
     @Override
     public String getName() {
-        return "Arithmetic progression";
+        return "Progression";
     }
 
     @Override
     public int getId() {
-        return 3;
+        return 5;
     }
 
     @Override

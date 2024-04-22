@@ -5,24 +5,22 @@ import hexlet.code.exception.TaskQuestionException;
 import hexlet.code.model.task.EvenTask;
 import hexlet.code.sevice.AnswerValidator;
 
-public class EvenGame implements Game<EvenTask> {
+public class EvenGame extends AbstractGame<EvenTask> {
 
     @Override
     public EvenTask instanceTask() {
-        return new EvenTask();
+        var checkValue = generator.nextInt(1, 100);
+        return new EvenTask(checkValue);
     }
 
     @Override
-    public boolean checkResult(EvenTask task) {
-        validateQuestion(task);
-        validateAnswer(task);
-        String rightAnswer = (task.getCheckValue() % 2 == 0) ? "yes" : "no";
-        return task.getAnswer().equalsIgnoreCase(rightAnswer);
+    public String getDescription() {
+        return "Answer 'yes' if the number is even, otherwise answer 'no'.";
     }
 
     @Override
     public String getName() {
-        return "Even number";
+        return "Even";
     }
 
     @Override
@@ -41,5 +39,10 @@ public class EvenGame implements Game<EvenTask> {
     @Override
     public void validateAnswer(EvenTask task) throws TaskAnswerException {
         AnswerValidator.yesOrNo(task);
+    }
+
+    @Override
+    protected String calculateResult(EvenTask task) {
+        return (task.getCheckValue() % 2 == 0) ? "yes" : "no";
     }
 }
