@@ -6,8 +6,18 @@ import java.util.Random;
 
 public abstract class AbstractGame<T extends Task> implements Game<T> {
 
-    protected Random generator = new Random();
+    private final Random generator = new Random();
 
+    protected Random getGenerator() {
+        return generator;
+    }
+
+
+    /**
+     * Метод проверяет корректность данных задания
+     * @param task
+     * @return
+     */
     protected boolean isValidData(T task) {
         try {
             validateQuestion(task);
@@ -19,6 +29,11 @@ public abstract class AbstractGame<T extends Task> implements Game<T> {
         }
     }
 
+    /**
+     * Метод проверяет результат задания
+     * @param task - задание для проверки
+     * @return
+     */
     @Override
     public boolean checkResult(T task) {
         if (!isValidData(task)) {

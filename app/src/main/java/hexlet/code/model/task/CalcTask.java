@@ -1,7 +1,7 @@
 package hexlet.code.model.task;
 
 
-public class CalcTask extends Task {
+public final class CalcTask extends Task {
 
     public CalcTask(Integer firstValue, Integer secondValue, String operation) {
         this.firstValue = firstValue;

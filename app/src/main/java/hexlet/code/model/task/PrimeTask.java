@@ -1,6 +1,6 @@
 package hexlet.code.model.task;
 
-public class PrimeTask extends Task {
+public final class PrimeTask extends Task {
 
     public PrimeTask(Integer checkValue) {
         this.checkValue = checkValue;

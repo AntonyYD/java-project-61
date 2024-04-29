@@ -8,19 +8,19 @@ import hexlet.code.sevice.AnswerValidator;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ProgressionGame extends AbstractGame<ProgressionTask> {
+public final class ProgressionGame extends AbstractGame<ProgressionTask> {
 
     @Override
     public ProgressionTask instanceTask() {
         List<Integer> progression = new ArrayList();
         int length = 10;
-        int increment = generator.nextInt(1, 10);
-        int firsItem = generator.nextInt(1, 100);
+        int increment = getGenerator().nextInt(1, 10);
+        int firsItem = getGenerator().nextInt(1, 100);
         progression.add(firsItem);
         for (int i = 1; i < length; i++) {
             progression.add(progression.get(i - 1) + increment);
         }
-        int index = generator.nextInt(0, length);
+        int index = getGenerator().nextInt(0, length);
         progression.set(index, null);
         return new ProgressionTask(progression);
     }

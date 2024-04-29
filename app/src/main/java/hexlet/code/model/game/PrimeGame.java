@@ -5,11 +5,11 @@ import hexlet.code.exception.TaskQuestionException;
 import hexlet.code.model.task.PrimeTask;
 import hexlet.code.sevice.AnswerValidator;
 
-public class PrimeGame extends AbstractGame<PrimeTask> {
+public final class PrimeGame extends AbstractGame<PrimeTask> {
 
     @Override
     public PrimeTask instanceTask() {
-        var checkValue = generator.nextInt(1, 50);
+        var checkValue = getGenerator().nextInt(1, 50);
         return new PrimeTask(checkValue);
     }
 

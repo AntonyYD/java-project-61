@@ -5,12 +5,12 @@ import hexlet.code.exception.TaskQuestionException;
 import hexlet.code.model.task.GCDTask;
 import hexlet.code.sevice.AnswerValidator;
 
-public class GCDGame extends AbstractGame<GCDTask> {
+public final class GCDGame extends AbstractGame<GCDTask> {
 
     @Override
     public GCDTask instanceTask() {
-        var firstValue = generator.nextInt(1, 50);
-        var secondValue = generator.nextInt(1, 50);
+        var firstValue = getGenerator().nextInt(1, 50);
+        var secondValue = getGenerator().nextInt(1, 50);
         return new GCDTask(firstValue, secondValue);
     }
 

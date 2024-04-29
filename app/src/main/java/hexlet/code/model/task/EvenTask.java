@@ -1,6 +1,6 @@
 package hexlet.code.model.task;
 
-public class EvenTask extends Task {
+public final class EvenTask extends Task {
 
     public EvenTask(Integer checkValue) {
         this.checkValue = checkValue;

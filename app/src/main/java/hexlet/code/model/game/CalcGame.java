@@ -8,7 +8,7 @@ import hexlet.code.sevice.AnswerValidator;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CalcGame extends AbstractGame<CalcTask> {
+public final class CalcGame extends AbstractGame<CalcTask> {
 
     {
         availableOperationList.add("+");
@@ -20,9 +20,9 @@ public class CalcGame extends AbstractGame<CalcTask> {
 
     @Override
     public CalcTask instanceTask() {
-        var firstValue = generator.nextInt(0, 100);
-        var secondValue = generator.nextInt(0, 100);
-        var index = generator.nextInt(0, availableOperationList.size());
+        var firstValue = getGenerator().nextInt(0, 100);
+        var secondValue = getGenerator().nextInt(0, 100);
+        var index = getGenerator().nextInt(0, availableOperationList.size());
         return new CalcTask(firstValue, secondValue, availableOperationList.get(index));
     }
 

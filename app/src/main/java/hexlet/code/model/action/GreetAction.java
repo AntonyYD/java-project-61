@@ -4,7 +4,7 @@ import hexlet.code.model.Actor;
 
 import java.util.Scanner;
 
-public class GreetAction implements Action, Actor {
+public final class GreetAction implements Action, Actor {
 
     String actor;
 

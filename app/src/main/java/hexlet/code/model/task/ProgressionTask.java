@@ -3,7 +3,7 @@ package hexlet.code.model.task;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class ProgressionTask extends Task {
+public final class ProgressionTask extends Task {
 
     public ProgressionTask(List<Integer> progression) {
         this.progression = progression;
