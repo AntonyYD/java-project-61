@@ -14,9 +14,10 @@ public abstract class AbstractGame<T extends Task> implements Game<T> {
 
 
     /**
-     * Метод проверяет корректность данных задания
-     * @param task
-     * @return
+     * Метод проверяет корректность данных задания.
+     *
+     * @param task - задание
+     * @return true если задание корректно, иначе false
      */
     protected boolean isValidData(T task) {
         try {
@@ -30,9 +31,10 @@ public abstract class AbstractGame<T extends Task> implements Game<T> {
     }
 
     /**
-     * Метод проверяет результат задания
+     * Метод проверяет результат задания.
+     *
      * @param task - задание для проверки
-     * @return
+     * @return true если ответ верен, иначе false
      */
     @Override
     public boolean checkResult(T task) {
