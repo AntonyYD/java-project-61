@@ -2,8 +2,8 @@ package hexlet.code.model.task;
 
 public final class PrimeTask extends Task {
 
-    public PrimeTask(Integer checkValue) {
-        this.checkValue = checkValue;
+    public PrimeTask(Integer value) {
+        this.checkValue = value;
     }
 
     private final Integer checkValue;

@@ -1,9 +1,9 @@
 package hexlet.code.model.task;
 
 public final class GCDTask extends Task {
-    public GCDTask(Integer firstValue, Integer secondValue) {
-        this.firstValue = firstValue;
-        this.secondValue = secondValue;
+    public GCDTask(Integer first, Integer second) {
+        this.firstValue = first;
+        this.secondValue = second;
     }
 
     private final Integer firstValue;

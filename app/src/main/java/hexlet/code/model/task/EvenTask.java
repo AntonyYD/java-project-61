@@ -2,8 +2,8 @@ package hexlet.code.model.task;
 
 public final class EvenTask extends Task {
 
-    public EvenTask(Integer checkValue) {
-        this.checkValue = checkValue;
+    public EvenTask(Integer value) {
+        this.checkValue = value;
     }
 
     private final Integer checkValue;

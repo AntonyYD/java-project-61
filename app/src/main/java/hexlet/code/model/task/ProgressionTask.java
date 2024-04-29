@@ -5,8 +5,8 @@ import java.util.stream.Collectors;
 
 public final class ProgressionTask extends Task {
 
-    public ProgressionTask(List<Integer> progression) {
-        this.progression = progression;
+    public ProgressionTask(List<Integer> progressionList) {
+        this.progression = progressionList;
     }
 
     private final List<Integer> progression;
