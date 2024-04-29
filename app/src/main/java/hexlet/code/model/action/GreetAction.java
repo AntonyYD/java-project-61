@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 public final class GreetAction implements Action, Actor {
 
-    String actor;
+    private String actor;
 
     @Override
     public String getActor() {

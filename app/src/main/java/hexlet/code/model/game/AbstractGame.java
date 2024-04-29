@@ -8,6 +8,10 @@ public abstract class AbstractGame<T extends Task> implements Game<T> {
 
     private final Random generator = new Random();
 
+    /**
+     * Метод возвращает генератор.
+     * @return  генератор
+     */
     protected Random getGenerator() {
         return generator;
     }

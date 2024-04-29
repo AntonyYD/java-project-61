@@ -10,18 +10,20 @@ import java.util.List;
 
 public final class CalcGame extends AbstractGame<CalcTask> {
 
+    private static final int MAX_NUMBER = 100;
+
     {
         availableOperationList.add("+");
         availableOperationList.add("-");
         availableOperationList.add("*");
     }
 
-    static List<String> availableOperationList = new ArrayList<>();
+    private static List<String> availableOperationList = new ArrayList<>();
 
     @Override
     public CalcTask instanceTask() {
-        var firstValue = getGenerator().nextInt(0, 100);
-        var secondValue = getGenerator().nextInt(0, 100);
+        var firstValue = getGenerator().nextInt(0, MAX_NUMBER);
+        var secondValue = getGenerator().nextInt(0, MAX_NUMBER);
         var index = getGenerator().nextInt(0, availableOperationList.size());
         return new CalcTask(firstValue, secondValue, availableOperationList.get(index));
     }
