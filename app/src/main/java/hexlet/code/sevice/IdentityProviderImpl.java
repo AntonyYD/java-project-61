@@ -13,7 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-public class IdentityProviderImpl implements IdentityProvider {
+public final class IdentityProviderImpl implements IdentityProvider {
 
     private List<Identity> registryList = new ArrayList<>();
 
