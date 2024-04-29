@@ -5,20 +5,20 @@
 
 # Проверка на чётность
 
-<img src="./src/main/resources/even.png" width="600"/>
+<img src="src/main/resources/even.png" width="600"/>
 
 # Калькулятор
 
-<img src="./src/main/resources/calc.png" width="600"/>
+<img src="src/main/resources/calc.png" width="600"/>
 
 # НОД
 
-<img src="./src/main/resources/GCD.png" width="600"/>
+<img src="src/main/resources/GCD.png" width="600"/>
 
 # Арифметическая прогрессия
 
-<img src="./src/main/resources/progression.png" width="600"/>
+<img src="src/main/resources/progression.png" width="600"/>
 
 # Простое ли число?
 
-<img src="./src/main/resources/prime.png" width="600"/>
+<img src="src/main/resources/prime.png" width="600"/>

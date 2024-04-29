@@ -15,7 +15,6 @@ public class App {
 
     public static void main(String[] arg) {
         System.out.println("Please enter the game number and press Enter.");
-
         try (Scanner scanner = new Scanner(System.in);) {
             IdentityProvider identityProvider = new IdentityProviderImpl();
             identityProvider.getAll().forEach(obj -> System.out.println(obj.getId() + " - " + obj.getName()));
