@@ -34,10 +34,10 @@ public abstract class Task {
     /**
      * Метод устанавливает текст ответа.
      *
-     * @param answer
+     * @param value - текст ответа
      */
-    public void setAnswer(String answer) {
-        this.answer = answer;
+    public void setAnswer(String value) {
+        this.answer = value;
     }
 
     /**
@@ -52,9 +52,9 @@ public abstract class Task {
     /**
      * Метод устанавливает верный ответ.
      *
-     * @param rightAnswer - верный ответ
+     * @param rightValue - верный ответ
      */
-    public void setRightAnswer(String rightAnswer) {
-        this.rightAnswer = rightAnswer;
+    public void setRightAnswer(String rightValue) {
+        this.rightAnswer = rightValue;
     }
 }
