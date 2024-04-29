@@ -6,12 +6,6 @@ import java.util.Random;
 
 public abstract class AbstractGame<T extends Task> implements Game<T> {
 
-    public AbstractGame(int id) {
-        this.id = id;
-    }
-
-    protected int id;
-
     private final Random generator = new Random();
 
     /**
@@ -58,8 +52,4 @@ public abstract class AbstractGame<T extends Task> implements Game<T> {
 
     protected abstract String calculateResult(T task);
 
-    @Override
-    public int getId() {
-        return id;
-    }
 }

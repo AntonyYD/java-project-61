@@ -9,9 +9,9 @@ public final class CalcTask extends Task {
         this.operation = operation;
     }
 
-    private Integer firstValue;
-    private Integer secondValue;
-    private String operation;
+    private final Integer firstValue;
+    private final Integer secondValue;
+    private final String operation;
 
     @Override
     public String getQuestion() {
@@ -30,15 +30,4 @@ public final class CalcTask extends Task {
         return operation;
     }
 
-    public void setFirstValue(Integer firstValue) {
-        this.firstValue = firstValue;
-    }
-
-    public void setSecondValue(Integer secondValue) {
-        this.secondValue = secondValue;
-    }
-
-    public void setOperation(String operation) {
-        this.operation = operation;
-    }
 }

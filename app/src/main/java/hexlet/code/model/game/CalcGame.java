@@ -11,6 +11,7 @@ import java.util.List;
 public final class CalcGame extends AbstractGame<CalcTask> {
 
     private static final int MAX_NUMBER = 100;
+    private final int id = 3;
 
     {
         availableOperationList.add("+");
@@ -19,10 +20,6 @@ public final class CalcGame extends AbstractGame<CalcTask> {
     }
 
     private static List<String> availableOperationList = new ArrayList<>();
-
-    public CalcGame() {
-        super(3);
-    }
 
     @Override
     public CalcTask instanceTask() {
@@ -35,6 +32,11 @@ public final class CalcGame extends AbstractGame<CalcTask> {
     @Override
     public String getDescription() {
         return "What is the result of the expression?";
+    }
+
+    @Override
+    public int getId() {
+        return id;
     }
 
     @Override
