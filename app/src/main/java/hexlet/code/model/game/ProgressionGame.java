@@ -10,9 +10,7 @@ import java.util.List;
 
 public final class ProgressionGame extends AbstractGame<ProgressionTask> {
 
-    public ProgressionGame() {
-        super(5);
-    }
+    private final int id = 5;
 
     @Override
     public ProgressionTask instanceTask() {
@@ -62,6 +60,11 @@ public final class ProgressionGame extends AbstractGame<ProgressionTask> {
         return String.valueOf(result);
     }
 
+
+    @Override
+    public int getId() {
+        return id;
+    }
 
     @Override
     public String getName() {

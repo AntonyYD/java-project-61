@@ -7,9 +7,7 @@ import hexlet.code.sevice.AnswerValidator;
 
 public final class PrimeGame extends AbstractGame<PrimeTask> {
 
-    public PrimeGame() {
-        super(6);
-    }
+    private final int id = 6;
 
     @Override
     public PrimeTask instanceTask() {
@@ -49,5 +47,10 @@ public final class PrimeGame extends AbstractGame<PrimeTask> {
     @Override
     public void validateAnswer(PrimeTask task) throws TaskAnswerException {
         AnswerValidator.yesOrNo(task);
+    }
+
+    @Override
+    public int getId() {
+        return id;
     }
 }

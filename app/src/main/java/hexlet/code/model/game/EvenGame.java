@@ -7,8 +7,11 @@ import hexlet.code.sevice.AnswerValidator;
 
 public final class EvenGame extends AbstractGame<EvenTask> {
 
-    public EvenGame() {
-        super(2);
+    private final int id = 2;
+
+    @Override
+    public int getId() {
+        return id;
     }
 
     @Override
