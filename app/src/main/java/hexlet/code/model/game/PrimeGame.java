@@ -8,10 +8,11 @@ import hexlet.code.sevice.AnswerValidator;
 public final class PrimeGame extends AbstractGame<PrimeTask> {
 
     private final int id = 6;
+    private static final int MAX_NUMBER = 50;
 
     @Override
     public PrimeTask instanceTask() {
-        var checkValue = getGenerator().nextInt(1, 50);
+        var checkValue = getGenerator().nextInt(1, MAX_NUMBER);
         return new PrimeTask(checkValue);
     }
 

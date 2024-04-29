@@ -11,18 +11,21 @@ import java.util.List;
 public final class ProgressionGame extends AbstractGame<ProgressionTask> {
 
     private final int id = 5;
+    private static final int MAX_NUMBER = 100;
+    private static final int MAX_INCREMENT = 10;
+    private static final int SIZE = 10;
+    private static final int MIN_COUNT = 3;
 
     @Override
     public ProgressionTask instanceTask() {
         List<Integer> progression = new ArrayList();
-        int length = 10;
-        int increment = getGenerator().nextInt(1, 10);
-        int firsItem = getGenerator().nextInt(1, 100);
+        int increment = getGenerator().nextInt(1, MAX_INCREMENT);
+        int firsItem = getGenerator().nextInt(1, MAX_NUMBER);
         progression.add(firsItem);
-        for (int i = 1; i < length; i++) {
+        for (int i = 1; i < SIZE; i++) {
             progression.add(progression.get(i - 1) + increment);
         }
-        int index = getGenerator().nextInt(0, length);
+        int index = getGenerator().nextInt(0, SIZE);
         progression.set(index, null);
         return new ProgressionTask(progression);
     }
@@ -74,7 +77,7 @@ public final class ProgressionGame extends AbstractGame<ProgressionTask> {
     @Override
     public void validateQuestion(ProgressionTask task) throws TaskQuestionException {
         if (task == null || task.getQuestion() == null || task.getQuestion().isBlank()
-                || task.getProgression() == null || task.getProgression().size() < 3
+                || task.getProgression() == null || task.getProgression().size() < MIN_COUNT
                 || task.getProgression().stream().anyMatch(item -> item != null && item <= 0)) {
             throw new TaskQuestionException();
         }

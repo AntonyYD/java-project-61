@@ -8,6 +8,7 @@ import hexlet.code.sevice.AnswerValidator;
 public final class EvenGame extends AbstractGame<EvenTask> {
 
     private final int id = 2;
+    private static final int MAX_NUMBER = 100;
 
     @Override
     public int getId() {
@@ -16,7 +17,7 @@ public final class EvenGame extends AbstractGame<EvenTask> {
 
     @Override
     public EvenTask instanceTask() {
-        var checkValue = getGenerator().nextInt(1, 100);
+        var checkValue = getGenerator().nextInt(1, MAX_NUMBER);
         return new EvenTask(checkValue);
     }
 

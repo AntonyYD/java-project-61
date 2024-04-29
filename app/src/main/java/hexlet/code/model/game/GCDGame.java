@@ -8,10 +8,11 @@ import hexlet.code.sevice.AnswerValidator;
 public final class GCDGame extends AbstractGame<GCDTask> {
 
     private final int id = 4;
+    private static final int MAX_NUMBER = 50;
     @Override
     public GCDTask instanceTask() {
-        var firstValue = getGenerator().nextInt(1, 50);
-        var secondValue = getGenerator().nextInt(1, 50);
+        var firstValue = getGenerator().nextInt(1, MAX_NUMBER);
+        var secondValue = getGenerator().nextInt(1, MAX_NUMBER);
         return new GCDTask(firstValue, secondValue);
     }
 
