@@ -7,6 +7,10 @@ import hexlet.code.sevice.AnswerValidator;
 
 public final class GCDGame extends AbstractGame<GCDTask> {
 
+    public GCDGame() {
+        super(4);
+    }
+
     @Override
     public GCDTask instanceTask() {
         var firstValue = getGenerator().nextInt(1, 50);
@@ -36,11 +40,6 @@ public final class GCDGame extends AbstractGame<GCDTask> {
     @Override
     public String getName() {
         return "GCD";
-    }
-
-    @Override
-    public int getId() {
-        return 4;
     }
 
     @Override

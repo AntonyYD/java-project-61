@@ -29,4 +29,16 @@ public final class CalcTask extends Task {
     public String getOperation() {
         return operation;
     }
+
+    public void setFirstValue(Integer firstValue) {
+        this.firstValue = firstValue;
+    }
+
+    public void setSecondValue(Integer secondValue) {
+        this.secondValue = secondValue;
+    }
+
+    public void setOperation(String operation) {
+        this.operation = operation;
+    }
 }

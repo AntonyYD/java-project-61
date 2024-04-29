@@ -20,6 +20,10 @@ public final class CalcGame extends AbstractGame<CalcTask> {
 
     private static List<String> availableOperationList = new ArrayList<>();
 
+    public CalcGame() {
+        super(3);
+    }
+
     @Override
     public CalcTask instanceTask() {
         var firstValue = getGenerator().nextInt(0, MAX_NUMBER);
@@ -36,11 +40,6 @@ public final class CalcGame extends AbstractGame<CalcTask> {
     @Override
     public String getName() {
         return "Calc";
-    }
-
-    @Override
-    public int getId() {
-        return 3;
     }
 
     @Override

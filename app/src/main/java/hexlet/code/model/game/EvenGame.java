@@ -7,6 +7,10 @@ import hexlet.code.sevice.AnswerValidator;
 
 public final class EvenGame extends AbstractGame<EvenTask> {
 
+    public EvenGame() {
+        super(2);
+    }
+
     @Override
     public EvenTask instanceTask() {
         var checkValue = getGenerator().nextInt(1, 100);
@@ -21,11 +25,6 @@ public final class EvenGame extends AbstractGame<EvenTask> {
     @Override
     public String getName() {
         return "Even";
-    }
-
-    @Override
-    public int getId() {
-        return 2;
     }
 
     @Override

@@ -10,6 +10,10 @@ import java.util.List;
 
 public final class ProgressionGame extends AbstractGame<ProgressionTask> {
 
+    public ProgressionGame() {
+        super(5);
+    }
+
     @Override
     public ProgressionTask instanceTask() {
         List<Integer> progression = new ArrayList();
@@ -62,11 +66,6 @@ public final class ProgressionGame extends AbstractGame<ProgressionTask> {
     @Override
     public String getName() {
         return "Progression";
-    }
-
-    @Override
-    public int getId() {
-        return 5;
     }
 
     @Override

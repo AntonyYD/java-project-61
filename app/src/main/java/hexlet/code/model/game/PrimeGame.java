@@ -7,6 +7,10 @@ import hexlet.code.sevice.AnswerValidator;
 
 public final class PrimeGame extends AbstractGame<PrimeTask> {
 
+    public PrimeGame() {
+        super(6);
+    }
+
     @Override
     public PrimeTask instanceTask() {
         var checkValue = getGenerator().nextInt(1, 50);
@@ -32,11 +36,6 @@ public final class PrimeGame extends AbstractGame<PrimeTask> {
     @Override
     public String getName() {
         return "Prime";
-    }
-
-    @Override
-    public int getId() {
-        return 6;
     }
 
     @Override
